@@ -1,0 +1,10 @@
+{
+    "continue.enableConsole": true,
+    "continue.disableQuickFix": true,
+    "continue.enableQuickActions": true,
+    "continue.pauseCodebaseIndexOnStart": true,
+    "continue.pauseTabAutocompleteOnBattery": false,
+    "window.autoDetectColorScheme": true,
+    "window.closeWhenEmpty": false,
+    "window.density.editorTabHeight": "compact"
+}
