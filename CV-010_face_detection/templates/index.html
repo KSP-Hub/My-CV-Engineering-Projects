@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детекция лиц — CV-010</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #333; }
+        .upload-area {
+            border: 3px dashed #ccc;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        .preview, .result { margin-top: 20px; }
+        img { max-width: 100%; border: 1px solid #ddd; }
+        .count { font-size: 1.2em; font-weight: bold; color: #0066cc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Детекция лиц в реальном времени</h1>
+        <p>Загрузите фото, и мы найдём на нём все лица!</p>
+        
+        <div class="upload-area" onclick="document.getElementById('file-input').click()">
+            <p>Нажмите, чтобы выбрать изображение</p>
+            <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="handleFile(this.files)">
+        </div>
+
+        <div class="preview" id="preview"></div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function handleFile(files) {
+            if (files.length === 0) return;
+            
+            const file = files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            // Показываем предпросмотр загруженного фото
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('preview').innerHTML = `
+                    <div style="margin: 20px 0;">
+                        <p><strong>Загруженное фото:</strong></p>
+                        <img src="${e.target.result}" alt="Preview" style="max-width: 300px; border: 1px solid #ddd;" />
+                    </div>
+                `;
+            };
+            reader.readAsDataURL(file);
+            
+            // Показываем прогресс-бар
+            document.getElementById('result').innerHTML = `
+                <div style="margin: 20px 0;">
+                    <p>Идёт обработка...</p>
+                    <div style="width: 100%; background: #f0f0f0; border-radius: 4px;">
+                        <div id="progress-bar" style="width: 0%; height: 20px; background: #0066cc; border-radius: 4px; transition: width 0.3s;"></div>
+                    </div>
+                </div>
+            `;
+            
+            // Анимация прогресс-бара
+            let width = 0;
+            const progressBar = document.getElementById('progress-bar');
+            const timer = setInterval(() => {
+                if (width >= 100) {
+                    width = 0;
+                }
+                width += 10;
+                progressBar.style.width = width + '%';
+            }, 300);
+            
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                clearInterval(timer);
+                progressBar.style.width = '100%';
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    document.getElementById('result').innerHTML = `<p style="color: red">Ошибка: ${data.error}</p>`;
+                    return;
+                }
+                
+                document.getElementById('result').innerHTML = `
+                    <p class="count">Найдено лиц: ${data.count}</p>
+                    <img src="data:image/jpeg;base64,${data.image}" alt="Результат детекции">
+                `;
+            })
+            .catch(error => {
+                clearInterval(timer);
+                progressBar.style.width = '100%';
+                document.getElementById('result').innerHTML = 
+                    `<p style="color: red">
+                        Ошибка соединения. <br>
+                        1. Убедитесь, что сервер запущен: <code>python app.py</code><br>
+                        2. Проверьте, что порт 5000 свободен<br>
+                        3. Перезагрузите страницу и попробуйте снова
+                    </p>`;
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

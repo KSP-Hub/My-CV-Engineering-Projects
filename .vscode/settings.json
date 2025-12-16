@@ -6,5 +6,46 @@
     "continue.pauseTabAutocompleteOnBattery": false,
     "window.autoDetectColorScheme": true,
     "window.closeWhenEmpty": false,
-    "window.density.editorTabHeight": "compact"
+    "window.density.editorTabHeight": "compact",
+    "sourcecraft-code-assist.vsCodeLmModelSelector": {
+        "provider": "yandex",
+        "model": "yandexgpt/latest"
+    },
+    "sourcecraft-code-assist.maxRequestSize": 10485760,
+    "sourcecraft-code-assist.maxTokens": 8192,
+    "sourcecraft-code-assist.requestTimeout": 60000,
+    "sourcecraft-code-assist.contextSize": 200000,
+    "sourcecraft-code-assist.includePatterns": [
+        "**/*.js",
+        "**/*.ts",
+        "**/*.py",
+        "**/*.java",
+        "**/*.cpp",
+        "**/*.h",
+        "**/*.cs",
+        "**/*.go",
+        "**/*.rs",
+        "**/*.php",
+        "**/*.rb",
+        "**/*.swift",
+        "**/*.kt",
+        "**/*.md",
+        "**/*.txt",
+        "**/*.json",
+        "**/*.yaml",
+        "**/*.yml",
+        "**/*.xml",
+        "**/*.html",
+        "**/*.css"
+    ],
+    "sourcecraft-code-assist.excludePatterns": [
+        "**/node_modules/**",
+        "**/__pycache__/**",
+        "**/.git/**",
+        "**/.vscode/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/*.log",
+        "**/.DS_Store"
+    ]
 }

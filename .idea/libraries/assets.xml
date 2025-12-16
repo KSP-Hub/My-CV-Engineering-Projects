@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="assets">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/assets/Face-Detection-master.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/DSS Synthetic Humans - Medium Quality.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/DSS Full biometric people dataset with emotional expressions at all angles.zip!/" />
+      <root url="jar://$PROJECT_DIR$/assets/DSS Human faces, front shots of adults only, original camera output on green screen.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

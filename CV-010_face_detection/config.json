@@ -1,0 +1,27 @@
+{
+  "models": [
+    {
+      "model": "deepseek-coder:6.7b-instruct",
+      "title": "DeepSeek Coder 6.7B",
+      "provider": "ollama",
+      "apiBase": "http://localhost:11434"
+    },
+    {
+      "model": "llama3:8b",
+      "title": "LLaMA 3 8B",
+      "provider": "ollama",
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "model": "deepseek-coder:6.7b-instruct",
+    "title": "DeepSeek Coder 6.7B",
+    "provider": "ollama",
+    "apiBase": "http://localhost:11434"
+  },
+  "completionOptions": {
+    "temperature": 0.5,
+    "maxTokens": 1000
+  },
+  "allowAnonymousTelemetry": false
+}

@@ -2,7 +2,7 @@
 CV-010: Детекция лиц OpenCV
 Автор: Stetson Perceptron
 Дата: 2025-11-28
-Версия: 1.0
+Версия: 2.0
 
 Описание:
 Реализация детектора лиц с использованием Haar cascades.
@@ -19,6 +19,19 @@ python face_detection.py
 import cv2
 import numpy as np
 import os
+import logging
+
+# Настройка логгирования
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("face_detection.log", encoding="utf-8"),
+        logging.StreamHandler()
+    ]
+)
+
+logger = logging.getLogger(__name__)
 
 class FaceDetector:
     def __init__(self):
@@ -68,17 +81,17 @@ class FaceDetector:
             flags=cv2.CASCADE_SCALE_IMAGE
         )
         
-        print(f"✅ Найдено {len(faces)} лиц")
+        logger.info(f"✅ Найдено {len(faces)} лиц")
         
         # Рисование bounding boxes
-        for (x, y, w, h) in faces:
+        for idx, (x, y, w, h) in enumerate(faces, start=1):
             cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-            cv2.putText(img, f'Face {len(faces)}', (x, y-10), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+            cv2.putText(img, f'Face #{idx}', (x, y-10),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
         
         # Сохранение результата
         cv2.imwrite(output_path, img)
-        print(f"💾 Результат сохранен в: {output_path}")
+        logger.info(f"💾 Результат сохранен в: {output_path}")
         
         return len(faces)
     
@@ -86,7 +99,7 @@ class FaceDetector:
         """Отображение результата с возможностью сохранения"""
         img = cv2.imread(image_path)
         cv2.imshow('Face Detection Result', img)
-        print("Нажмите любую клавишу для закрытия окна...")
+        logger.info("Нажмите любую клавишу для закрытия окна...")
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
@@ -98,6 +111,10 @@ def main():
         
         # Пути к файлам
         input_image = "input.jpg"
+        if not os.path.exists(input_image):
+            # Пробуем найти input.jpg в папке static
+            input_image = "static/input.jpg"
+            
         output_image = "output.jpg"
         
         # Детекция лиц
@@ -106,14 +123,14 @@ def main():
         # Отображение результата
         detector.display_result(output_image)
         
-        print(f"🎉 Проект CV-010 успешно завершен! Найдено: {faces_count} лиц")
+        logger.info(f"🎉 Проект CV-010 успешно завершен! Найдено: {faces_count} лиц")
         
     except Exception as e:
-        print(f"❌ Ошибка: {str(e)}")
-        print("💡 Рекомендации по исправлению:")
-        print("- Проверьте, что файл 'input.jpg' существует в папке проекта")
-        print("- Убедитесь, что окружение 'cv_env' активировано")
-        print("- Проверьте установку OpenCV: conda list opencv")
+        logger.error(f"❌ Ошибка: {str(e)}")
+        logger.info("💡 Рекомендации по исправлению:")
+        logger.info("- Проверьте, что файл 'input.jpg' существует в папке проекта")
+        logger.info("- Убедитесь, что окружение 'cv_env' активировано")
+        logger.info("- Проверьте установку OpenCV: conda list opencv")
         return 1
     
     return 0

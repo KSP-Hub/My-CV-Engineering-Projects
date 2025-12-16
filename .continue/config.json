@@ -1,21 +1,27 @@
 {
   "models": [
     {
-      "title": "SourceCraft Assistant",
+      "title": "SourceCraft Assistant (Cloud)",
       "provider": "openai",
       "model": "gpt-4o-mini",
       "apiKey": "sourcecraft",
-      "apiBase": "http://localhost:8000/v1",
-      "contextLength": 128000
+      "apiBase": "https://sourcecraft.dev/me/codeassistant",
+      "contextLength": 2097152
+    },
+    {
+      "title": "Local CV Expert",
+      "model": "deepseek-coder:6.7b-instruct",
+      "apiBase": "http://localhost:11434",
+      "provider": "ollama"
     }
   ],
   "tabAutocompleteModel": {
-    "title": "SourceCraft Assistant",
+    "title": "SourceCraft Assistant (Cloud)",
     "provider": "openai",
     "model": "gpt-4o-mini",
     "apiKey": "sourcecraft",
-    "apiBase": "http://localhost:8000/v1",
-    "contextLength": 128000
+    "apiBase": "https://sourcecraft.dev/me/codeassistant",
+    "contextLength": 2097152
   },
   "enableDebugLogs": true,
   "codebaseIndexing": {

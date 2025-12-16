@@ -1,0 +1,30 @@
+# Временные файлы
+*.tmp
+*.log
+output.jpg
+output_notebook.jpg
+
+# Jupyter Notebook
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/**
+*.ipynb - Copy*.ipynb
+
+# Виртуальные окружения
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# RAR архивы
+*.rar
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
