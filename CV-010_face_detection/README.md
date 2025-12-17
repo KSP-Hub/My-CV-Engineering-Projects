@@ -36,7 +36,7 @@
 
 ## Структура проекта
 
-```
+```txt
 CV-010_face_detection/
 ├── app.py                  # Веб-приложение Flask
 ├── face_detection.py       # Логика распознавания лиц
