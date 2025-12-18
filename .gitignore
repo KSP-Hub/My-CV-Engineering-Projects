@@ -20,8 +20,8 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-//# RAR архивы
-//*.rar
+# RAR архивы
+*.rar
 
 # IDE
 .idea/
@@ -35,12 +35,10 @@ Thumbs.db
 # Скомпилированные бинарные файлы
 CV-010_face_detection/dist/app.exe
 build/app/app.pkg
+
+# Большие бинарные файлы — управляются через LFS или исключены
 *.exe
 *.pkg
-
-//# Большие бинарные файлы — управляются через LFS или исключены
-//*.exe
-//*.pkg
-//*.bin
-//*.zip
-//*.tar.gz
+*.bin
+*.zip
+*.tar.gz
