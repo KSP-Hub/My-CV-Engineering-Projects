@@ -20,11 +20,27 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# RAR архивы
-*.rar
+//# RAR архивы
+//*.rar
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+
+# Исключить копию .gitignore, созданную для обхода бага
+.gitignore.txt
+
+# Скомпилированные бинарные файлы
+CV-010_face_detection/dist/app.exe
+build/app/app.pkg
+*.exe
+*.pkg
+
+//# Большие бинарные файлы — управляются через LFS или исключены
+//*.exe
+//*.pkg
+//*.bin
+//*.zip
+//*.tar.gz
