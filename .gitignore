@@ -33,8 +33,8 @@ Thumbs.db
 .gitignore.txt
 
 # Скомпилированные бинарные файлы
-CV-010_face_detection/dist/app.exe
-build/app/app.pkg
+CV-010_face_detection/dist/CV-010-app.exe
+build/app/CV-010-app.pkg
 
 # Большие бинарные файлы — управляются через LFS или исключены
 *.exe
