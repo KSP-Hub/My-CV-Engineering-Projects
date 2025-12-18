@@ -1,3 +1,5 @@
 app.exe filter=lfs diff=lfs merge=lfs -text
+CV-010_face_detection/dist/app.exe filter=lfs diff=lfs merge=lfs -text
+build/app/app.pkg filter=lfs diff=lfs merge=lfs -text
 CV-010_face_detection/dist/CV-010-app.exe filter=lfs diff=lfs merge=lfs -text
 build/app/CV-010-app.pkg filter=lfs diff=lfs merge=lfs -text
