@@ -1,6 +1,6 @@
 # Guide
 
-## Справочник для заполнения проектов
+## СПРАВОЧНИК ДЛЯ ЗАПОЛНЕНИЯ ПРОЕКТОВ
 Источник информации: Сайт https://github.com/KSP-Hub/Stanislav-Karamin-Portfolio/blob/main/js/main.js
 
 Code:
