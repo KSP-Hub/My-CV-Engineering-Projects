@@ -132,7 +132,7 @@
 
 ```mermaid
 mindmap
-    root(CV-000-ai-assistant)
+    root((CV-000-ai-assistant))
         docs
             Отчёт о настройке Ai агента
             Инструкция по использованию CV Assistant
