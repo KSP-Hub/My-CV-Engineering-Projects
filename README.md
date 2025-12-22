@@ -1,7 +1,7 @@
 # ^[My-CV-Engineering-Projects] 
 
 # 1. ОБЩАЯ ИНФОРМАЦИЯ
-- Название проекта: Кодовое название ^[My-CV-Engineering-Projects] он же - «Автономный ассистент 2025 для CV‑разработки на Python (аналог Cursor AI без санкционных зависимостей)»
+- Название проекта: Кодовое название ^[My-CV-Engineering-Projects]
 
 
 # КРАТКОЕ ИНФОРМАЦИЯ О ПРОЕКТЕ
@@ -25,20 +25,19 @@
 ```markdown
 My-CV-Engineering-Projects>/        // # Корневая директория проекта
     ├── README.md                           // Навигационный файл проекта
-* ├── resources/                          // # Ресурсы проекта
+*   ├── resources/                          // # Ресурсы проекта
     * ├── datasets/          # Датасеты
     * └── sample-images/    #  Примеры изображений
-* ├── assets /                  // # 
-  ├── sub project /                       # Подпроекты
-    ├── CV-000-ai-assistant /                   # status: done 
-    ├── CV-010-face-detection /                 # status: ongoing
-    ├── CV-011-QR-code-recognition /            # status: backlog
-    ├── CV-012-image-filters /                  # status: backlog
-    ├── CV-013-CNN-classification /             # status: backlog
-    ├── CV-014-transfer-learning /              # status: backlog
-    ├── CV-015-YOLO-detection /                 # status: backlog
-    ├── CV-016-U-Net-segmentation /             # status: backlog
-    └── CV-017-style-transfer /                 # status: backlog
+*   ├── assets /                  // # 
+    ├── CV-000-ai-assistant /                   # Подпроект. status: done
+    ├── CV-010-face-detection /                 # Подпроект. status: ongoing
+    ├── CV-011-QR-code-recognition /            # Подпроект. status: backlog
+    ├── CV-012-image-filters /                  # Подпроект. status: backlog
+    ├── CV-013-CNN-classification /             # Подпроект. status: backlog
+    ├── CV-014-transfer-learning /              # Подпроект. status: backlog
+    ├── CV-015-YOLO-detection /                 # Подпроект. status: backlog
+    ├── CV-016-U-Net-segmentation /             # Подпроект. status: backlog
+    └── CV-017-style-transfer /                 # Подпроект. status: backlog
   └── teamplate-project /                       # Шаблон проекта
 
 *
