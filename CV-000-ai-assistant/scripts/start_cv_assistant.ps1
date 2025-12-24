@@ -38,11 +38,18 @@ Write-Host "Proverka optimizirovannoi modeli..." -ForegroundColor Yellow
 $models = ollama list | Out-String
 if ($models -notmatch "cv-rtx4000") {
     Write-Host "Sozdayu optimizirovannuyu model dlya Quadro RTX 4000..." -ForegroundColor Yellow
-    # Zdes mozhno dobavit sozdanie modeli iz Modelfile
-    # No proshche vruchnuyu sozdat odin raz
-    Write-Host "Zapustite komandu vruchnuyu:" -ForegroundColor Red
-    Write-Host 'ollama create cv-rtx4000 -f "Modelfile-rtx4000"' -ForegroundColor White
-    pause
+    
+    # Proverka nalichiya Modelfile-rtx4000
+    $modelfilePath = Join-Path $PSScriptRoot "Modelfile-rtx4000"
+    if (Test-Path $modelfilePath) {
+        ollama create cv-rtx4000 -f $modelfilePath
+        Write-Host "Model "cv-rtx4000" uspeshno sozdana" -ForegroundColor Green
+    } else {
+        Write-Host "Oshibka: Fail "Modelfile-rtx4000" ne naiden v skriptah" -ForegroundColor Red
+        Write-Host "Pomeste fail "Modelfile-rtx4000" v papku so skriptami" -ForegroundColor Yellow
+        pause
+        exit 1
+    }
 }
 
 # Predzagruzka modeli
