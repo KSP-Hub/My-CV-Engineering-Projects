@@ -61,10 +61,12 @@
 **Количественные показатели (КОП):**
 
   - время отклика: ≤ 10 сек;
-
   - поддерживаемые IDE: VS Code (версия ≥ 1.70);
-
   - совместимость с Python: 3.8–3.14;
+  - ОС: Windows 10/11, Linux, macOS;
+  - Требования к железу: 8+ GB RAM, 4+ CPU cores
+
+[Пакет релиза CV-010 — GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0)
 
 ## 4. Технические требования
 
@@ -157,7 +159,6 @@ My-CV-Engineering-Projects/CV-000-ai-assistant/
 > Основные скрипты управления AI-ассистентом:
 
 - **`start_cv_assistant.ps1`** — запускает локальный сервер Ollama с оптимизированной моделью для CV-проектов на GPU Quadro RTX 4000. Теперь автоматически создает модель `cv-rtx4000` при первом запуске.
-
 
 - **`check_assistant.ps1`** — проверяет состояние сервера Ollama, порта и доступности модели
 

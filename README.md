@@ -21,34 +21,33 @@
 ## Структура проекта
 ```
 My-CV-Engineering-Projects/
-├── .codeassistant/   # Конфигурация AI-ассистента
-├── .continue/        # Конфигурация Continue
-├── .gigaide/         # Конфигурация GigaIDE
-├── .git/             # Конфигурация Git
-├── .gitattributes    # Настройки Git
-├── .gitignore        # Файлы, исключенные из Git
-├── ai-conversations/         # Записи разговоров с AI
-├── anaconda_projects/        # Проекты Anaconda
-├── assets/                   # Статические ресурсы
-├── build/                    # Временные файлы сборки
-├── CV-000-ai-assistant/                         # Подпроект: AI-ассистент (status: done)
-├── CV-010_face_detection/                       # Подпроект: Детекция лиц (status: ongoing)
-├── CV-011-QR-code-recognition/                  # Подпроект. (status: backlog)
-├── CV-012-image-filters/                        # Подпроект. (status: backlog)
-├── CV-013-CNN-classification/                   # Подпроект. (status: backlog)
-├── CV-014-transfer-learning/                    # Подпроект. (status: backlog)
-├── CV-015-YOLO-detection/                       # Подпроект. (status: backlog)
-├── CV-016-U-Net-segmentation/                   # Подпроект. (status: backlog)
-├── CV-017-style-transfer/                       # Подпроект. (status: backlog)
+├── .codeassistant/          # Конфигурация AI-ассистента
+├── .continue/              # Конфигурация Continue
+├── .gigaide/               # Конфигурация GigaIDE
+├── .git/                   # Конфигурация Git
+├── .gitattributes          # Настройки Git
+├── .gitignore              # Файлы, исключенные из Git
+├── ai-conversations/       # Записи разговоров с AI
+├── anaconda_projects/      # Проекты Anaconda
+├── assets/                 # Статические ресурсы
+├── build/                  # Временные файлы сборки
+├── CV-000-ai-assistant/    # Подпроект: AI-ассистент
+├── CV-010_face_detection/  # Подпроект: Детекция лиц
+├── CV-011-QR-code-recognition/     # Подпроект: Распознавание QR-кодов
+├── CV-012-image-filters/           # Подпроект: Фильтры изображений
+├── CV-013-CNN-classification/       # Подпроект: Классификация изображений CNN
+├── CV-014-transfer-learning/       # Подпроект: Transfer Learning
+├── CV-015-YOLO-detection/          # Подпроект: Детекция объектов YOLO
+├── CV-016-U-Net-segmentation/      # Подпроект: Сегментация U-Net
+├── CV-017-style-transfer/          # Подпроект: Перенос стиля
 ├── dist/                   # Скомпилированные бинарные файлы
 ├── docs/                   # Документация
 ├── LICENSE                 # Лицензия
 ├── README.md               # Главный файл документации
 ├── scripts/                # Скрипты автоматизации
 ├── static/                 # Статические файлы веб-приложений
-├── teamplate project/      # Шаблон для новых проектов
+├── teamplate project/      # Шаблон для создания новых CV-проектов
 └── tests/                  # Тесты
-└── 
 ```
 
 ---
@@ -68,48 +67,94 @@ My-CV-Engineering-Projects/
 - **`docs/`** — центральная документация проекта, включая project-docs/ с ключевыми документами
 - **`scripts/`** — все скрипты автоматизации, разделённые по функциональности
 - **`tests/`** — тесты и временные файлы, включая чек-листы для завершения проектов
+- **`.git/`** — внутренняя директория Git для управления версиями проекта
 
 ### Подпроекты:
-- **`CV-000-ai-assistant/`** — завершённый проект по настройке AI-помощника
-- **`CV-010_face_detection/`** — проект по детекции лиц с OpenCV, включает веб-интерфейс на Flask
+- **`CV-000-ai-assistant/`** — завершённый проект по настройке AI-помощника для автоматизации разработки на Python
+- **`CV-010_face_detection/`** — проект по детекции лиц с OpenCV, включает веб-интерфейс на Flask и логику обработки изображений
+- **`CV-011-QR-code-recognition/`** — проект по распознаванию QR-кодов (в плане)
+- **`CV-012-image-filters/`** — проект по применению фильтров к изображениям (в плане)
+- **`CV-013-CNN-classification/`** — проект по классификации изображений с использованием сверточных нейронных сетей (в плане)
+- **`CV-014-transfer-learning/`** — проект по использованию transfer learning для классификации изображений (в плане)
+- **`CV-015-YOLO-detection/`** — проект по детекции объектов с использованием YOLO (в плане)
+- **`CV-016-U-Net-segmentation/`** — проект по сегментации изображений с использованием U-Net (в плане)
+- **`CV-017-style-transfer/`** — проект по переносу стиля изображений с использованием нейронных сетей (в плане)
 - **`teamplate project/`** — шаблон для создания новых CV-проектов с готовой структурой и документацией
 
 ### Технические папки:
 
----
-- **`build/`, `dist/`** — временные и финальные файлы сборки приложений
-- **`assets/`, `static/`** — статические ресурсы, изображения, CSS/JS файлы
-- **`anaconda_projects/`** — проекты, созданные в Anaconda
+- **`build/`** — временные файлы сборки приложений, генерируемые при компиляции
+- **`dist/`** — финальные скомпилированные бинарные файлы приложений, готовые к распространению
+- **`assets/`** — папка для статических ресурсов, таких как изображения, иконки, шрифты и другие медиафайлы
+- **`static/`** — статические файлы веб-приложений, такие как CSS, JavaScript и результаты обработки изображений
+- **`anaconda_projects/`** — проекты, созданные в среде Anaconda, популярной платформе для научных вычислений и машинного обучения
 
 ## Технологии и инструменты
----
 
-- **Python** — основной язык разработки
-- **OpenCV** — обработка изображений и компьютерное зрение
-- **Flask** — веб-фреймворк для создания интерфейсов
-- **Ollama** — запуск локальных LLM моделей
+- **Python 3.8+** — основной язык разработки
+- **OpenCV 4.10+** — обработка изображений и компьютерное зрение
+- **Flask 3.1+** — веб-фреймворк для создания интерфейсов
+- **Ollama** — запуск локальных LLM моделей (deepseek-coder:6.7b-instruct-q4_K_M)
 - **Git / GitHub** — управление версиями
 - **Git LFS** — работа с большими файлами
 - **Jupyter Notebook** — анализ данных и прототипирование
-- **PowerShell** — автоматизация на Windows
+- **PowerShell 5.1+** — автоматизация на Windows
+- **Visual Studio Code** — основная среда разработки с интеграцией Continue
+- **DeepSeek** — языковые модели для AI-ассистента
+
+[Пакет релиза CV-010 — GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0)
 
 ## Установка
 
----
 1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/KSP-Hub/My-CV-Engineering-Projects.git
    ```
-2. Установите зависимости:
+2. Перейдите в папку проекта:
+   ```bash
+   cd My-CV-Engineering-Projects
+   ```
+3. Установите зависимости:
    ```bash
    pip install -r requirements.txt
    ```
-3. Установите Git LFS:
+4. Установите Git LFS:
    ```bash
    git lfs install
+   ```
+5. Установите Ollama:
+   Скачайте и установите с [официального сайта Ollama](https://ollama.com)
+6. Загрузите модель для CV-ассистента:
+   ```bash
+   ollama pull deepseek-coder:6.7b-instruct-q4_K_M
    ```
 
 ## Запуск
 
----
-- Для запуска AI-ассистента: `.\
+### Для запуска AI-ассистента:
+1. Запустите сервер Ollama:
+   ```powershell
+   scripts/start_cv_assistant.ps1
+   ```
+2. Переключитесь на нужную модель:
+   ```cmd
+   scripts/run_switch.bat
+   ```
+3. Запустите VS Code:
+   ```cmd
+   scripts/start_cv.bat
+   ```
+
+### Для запуска веб-приложения CV-010 Face Detection:
+1. Перейдите в папку проекта:
+   ```bash
+   cd CV-010_face_detection
+   ```
+2. Запустите сервер:
+   ```bash
+   python app.py
+   ```
+3. Откройте в браузере:
+   http://localhost:5000
+
+[Пакет релиза CV-010 — GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0)
