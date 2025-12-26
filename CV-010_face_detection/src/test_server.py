@@ -22,7 +22,7 @@ def test_server():
     # Start server in background
     print("[TEST] Starting server...")
     process = subprocess.Popen([
-        'python', 'app.py'
+        'python', 'CV-010-app.py'
     ], cwd='.', stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     
     # Wait for server to start

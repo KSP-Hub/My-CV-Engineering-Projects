@@ -29,8 +29,8 @@ Thumbs.db
 *.swp
 *.swo
 
-# Исключить копию .gitignore, созданную для обхода бага
-.gitignore.txt
+# Устаревшее исключение — можно удалить
+# .gitignore.txt
 
 # Скомпилированные бинарные файлы
 # CV-010_face_detection/dist/CV-010-app.exe

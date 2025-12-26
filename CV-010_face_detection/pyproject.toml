@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cv-face-detection"
+version = "1.0.0"
+description = "Face detection using Haar cascades in OpenCV"
+authors = [
+    {name = "Stetson Perceptron", email = "stetson@example.com"},
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "opencv-python>=4.5.0",
+    "numpy>=1.20.0",
+    "flask>=2.0.0",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+]
+
+[project.optional-dependencies]
+develop = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "mypy",
+    "codecov",
+]
+
+[project.urls]
+Homepage = "https://github.com/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection"
+"Bug Tracker" = "https://github.com/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"" = ["configs/*.xml"]
+
+[project.scripts]
+face-detection = "face_detection:main"
+cv-face-app = "CV-010-app:main"

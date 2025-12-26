@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['D:/Apps/GitHub/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection/app.py'],
+    ['D:/Apps/GitHub/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection/CV-010-app.py'],
     pathex=[],
     binaries=[],
     datas=[('D:/Apps/GitHub/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection/templates', 'templates'), ('D:/Apps/GitHub/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection/static', 'static'), ('D:/Apps/GitHub/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection/haarcascade_frontalface_default.xml', '.')],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='app',
+    name='CV-010-app',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

@@ -24,11 +24,11 @@
 
 **Минимальный набор плагинов для CV-проектов:**
 
-1. Python (official)
-2. Jupyter (official)
-3. Continue (for AI assistant)
-4. Live Preview (only if HTML is needed)
-5. Pylance (for code analysis)
+1. Python (официальный)
+2. Jupyter (официальный)
+3. Continue (для AI-ассистента)
+4. Live Preview (только если нужен HTML)
+5. Pylance (для анализа кода)
 
 ### Установка
 
@@ -42,29 +42,29 @@ conda activate cv_env
 pip install -r requirements.txt
 ```
 
-## Project Structure
+## Структура проекта
 
 ```
 CV-010_face_detection/
-├── docs/                           # Documentation
-├── scripts/                        # Automation scripts
-├── tests/                          # Tests
-├── images/                         # Images (renamed from image)
-├── src/                            # Source code (new folder)
-├── configs/                        # Configuration files (new folder)
-├── static/                         # Processing results
-├── templates/                      # HTML templates
-├── assets/                         # CSS, JS, images
-├── config.json                     # Continue.dev configuration
-├── face_detection.py               # Face detection logic
-├── real_time_detection.py          # Real-time face detection
-├── CV-010-app.py                   # Flask web application
-├── haarcascade_frontalface_default.xml  # Haar cascade file
-├── input.jpg                       # Test image
-├── output.jpg                      # Detection result
-├── requirements.txt                # Dependencies
-├── LICENSE                         # License
-└── README.md                       # Main documentation
+├── docs/                           # Документация
+├── scripts/                        # Скрипты автоматизации
+├── tests/                          # Тесты
+├── images/                         # Изображения (переименовать из image)
+├── src/                            # Исходный код (новая папка)
+├── configs/                        # Конфигурационные файлы (новая папка)
+├── static/                         # Результаты обработки
+├── templates/                      # HTML шаблоны
+├── assets/                         # CSS, JS, изображения
+├── config.json                     # Конфигурация Continue.dev
+├── face_detection.py               # Логика распознавания лиц
+├── real_time_detection.py          # Распознавание лиц в реальном времени
+├── CV-010-app.py                   # Веб-приложение Flask
+├── haarcascade_frontalface_default.xml  # Файл каскада Хаара
+├── input.jpg                       # Тестовое изображение
+├── output.jpg                      # Результат детекции
+├── requirements.txt                # Зависимости
+├── LICENSE                         # Лицензия
+└── README.md                       # Главный файл документации
 ```
 
 ## Инструкции по использованию
@@ -147,18 +147,20 @@ kill_port.bat
 
 ### Исполняемые файлы
 
-Исполняемые файлы:
+Исполняемые файлы слишком велики для хранения в репозитории GitHub (ограничение 100 МБ):
 
-- `dist/CV-010-app.exe` - 145 MB
-- `build/CV-010-app/CV-010-app.pkg` - 145 MB
+- `dist/CV-010-app.exe` - 145 МБ
+- `build/CV-010-app/CV-010-app.pkg` - 145 МБ
 
-Файлы доступны для скачивания: [CV-010-v1.0.0 GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0)
+Файлы доступны для скачивания:
+
+[CV-010-v1.0.0 GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0)
 
 ## Статус проекта
 
-✅ **Завершен:** Детектор лиц работает стабильно
-✅ **Точность:** 85-90% на изображениях хорошего качества
-✅ **Производительность:** Оптимизирован для CPU
+✅ **Завершен:** Детектор лиц работает стабильно  
+✅ **Точность:** 85-90% на изображениях хорошего качества  
+✅ **Производительность:** Оптимизирован для CPU  
 ✅ **Документация:** Полный код с комментариями и обработкой ошибок
 
 ## Рекомендации для релиза
@@ -227,8 +229,8 @@ kill_port.bat
 4. Исправить проблемы с путями в CV-010-app.py
 5. Создать правильную конфигурацию пакетирования
 
-The project demonstrates solid core functionality but requires additional work on software engineering best practices before a production release.
+Проект демонстрирует надежную основную функциональность, но требует дополнительной работы по применению лучших практик разработки программного обеспечения перед производственным релизом.
 
-## License
+## Лицензия
 
 MIT License
