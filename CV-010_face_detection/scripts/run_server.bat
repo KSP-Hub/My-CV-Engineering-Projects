@@ -8,7 +8,7 @@ echo.
 echo [2/2] Zapusk veb-interfeysa...
 echo Pereydite v brauzere po adresu: http://localhost:5000
 echo Nazhmite Ctrl+C dlya ostanovki servera
-python app.py
+python CV-010-app.py
 
 echo.
 echo [3/3] Zaversheno!

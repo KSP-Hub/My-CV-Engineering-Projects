@@ -1,62 +1,52 @@
 from flask import Flask, render_template, request, jsonify
-import cv2
-import numpy as np
-import base64
 import os
+import logging
+
+# Настройка логгирования
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# Импорт ядра детекции лиц
+from face_detection_core import FaceDetector
+
+# Добавляем импорт версии
+try:
+    with open('../.version/VERSION', 'r') as f:
+        VERSION = f.read().strip()
+except FileNotFoundError:
+    VERSION = '1.0.0'
 
 def detect_faces_in_image(image_path):
-    """Функция детекции лиц, переиспользует логику из face_detection.py"""
-    # Используем абсолютный путь к каскаду
-    cascade_path = 'D:/Apps/GitHub/KSP-Hub/My-CV-Engineering-Projects/CV-010_face_detection/haarcascade_frontalface_default.xml'
-    face_cascade = cv2.CascadeClassifier(cascade_path)
-    
-    if face_cascade.empty():
-        raise Exception(f'Не удалось загрузить каскад Хаара: {cascade_path}')
-    
-    img = cv2.imread(image_path)
-    
-    # Уменьшаем размер изображения для ускорения обработки
-    max_width = 800
-    height, width = img.shape[:2]
-    if width > max_width:
-        new_width = max_width
-        new_height = int(height * (max_width / width))
-        img = cv2.resize(img, (new_width, new_height), interpolation=cv2.INTER_AREA)
-    
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    
-    faces = face_cascade.detectMultiScale(
-        gray,
-        scaleFactor=1.1,
-        minNeighbors=5,
-        minSize=(30, 30)
-    )
-    
-    # Рисуем рамки
-    for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-    
-    # Убедимся, что папка static существует
-    os.makedirs('static', exist_ok=True)
-    
-    # Сохраняем результат
-    result_path = "static/output.jpg"
-    cv2.imwrite(result_path, img)
-    
-    # Кодируем изображение для отправки в HTML
-    _, buffer = cv2.imencode('.jpg', img)
-    img_str = base64.b64encode(buffer).decode()
-    
-    return {
-        'count': len(faces),
-        'image': img_str
-    }
+    """Детекция лиц с использованием ядра face_detection_core"""
+    try:
+        # Инициализация детектора с конфигурацией
+        detector = FaceDetector()
+        
+        # Параметры для веб-интерфейса
+        max_width = 800
+        output_path = "static/output.jpg"
+        
+        # Обработка изображения
+        result = detector.detect_faces(
+            image_path=image_path,
+            output_path=output_path,
+            resize_for_web=True
+        )
+        
+        return result
+        
+    except Exception as e:
+        print(f"[ERROR] Ошибка при детекции лиц: {str(e)}")
+        raise
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', version=VERSION)
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -74,10 +64,10 @@ def upload():
     import uuid
     file_ext = file.filename.split('.')[-1]
     filename = f"upload_{uuid.uuid4().hex}.{file_ext}"
-    filepath = os.path.join('static', filename)
+    filepath = os.path.join('../static', filename)
     
     # Убедимся, что папка static существует
-    os.makedirs('static', exist_ok=True)
+    os.makedirs('../static', exist_ok=True)
     
     print(f"[DEBUG] Сохранение файла: {filepath}")
     try:

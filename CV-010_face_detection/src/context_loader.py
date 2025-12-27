@@ -6,68 +6,84 @@ import json
 import os
 from pathlib import Path
 
-def load_project_context(project_root: str = ".") -> dict:
-    """
-    Загружает полный контекст проекта
+
+def create_directories():
+    """Создание необходимых директорий"""
+    directories = ['static', 'configs', 'logs', 'output']
+    result = {'success': True, 'created': [], 'failed': []}
     
-    Args:
-        project_root: Путь к корню проекта
+    for directory in directories:
+        try:
+            os.makedirs(directory, exist_ok=True)
+            result['created'].append(directory)
+        except Exception as e:
+            result['failed'].append({'dir': directory, 'error': str(e)})
+            result['success'] = False
     
-    Returns:
-        Словарь с полным контекстом
-    """
-    project_root = Path(project_root).resolve()
+    return result
+
+def load_config():
+    """Загрузка конфигурации из файла"""
+    try:
+        with open('configs/config.json', 'r', encoding='utf-8') as f:
+            config = json.load(f)
+        return {'success': True, 'config': config}
+    except FileNotFoundError:
+        return {'success': True, 'config': {}}
+    except Exception as e:
+        return {'success': False, 'error': str(e)}
+
+def initialize_database():
+    """Инициализация базы данных"""
+    try:
+        # Здесь будет инициализация базы данных
+        return {'success': True, 'message': 'Database initialized'}
+    except Exception as e:
+        return {'success': False, 'error': str(e)}
+
+def setup_logging():
+    """Настройка логгирования"""
+    try:
+        # Здесь будет настройка логгирования
+        return {'success': True, 'level': 'INFO'}
+    except Exception as e:
+        return {'success': False, 'error': str(e)}
+
+def load_context():
+    """Загрузка полного контекста приложения"""
+    # Создание директорий
+    dirs_result = create_directories()
+    if not dirs_result['success']:
+        return {'success': False, 'error': f'Directory creation failed: {dirs_result}'}
     
-    context = {
-        "project_info": {
-            "name": "My-CV-Engineering-Projects",
-            "root": str(project_root),
-            "structure": {},
-            "status": {}
-        },
-        "rules": "",
-        "files": {}
+    # Инициализация базы данных
+    db_result = initialize_database()
+    if not db_result['success']:
+        return {'success': False, 'error': f'Database init failed: {db_result}'}
+    
+    # Загрузка конфигурации
+    config_result = load_config()
+    if not config_result.get('success', False):
+        return {'success': False, 'error': f'Config load failed: {config_result}'}
+    
+    # Настройка логгирования
+    logging_result = setup_logging()
+    if not logging_result['success']:
+        return {'success': False, 'error': f'Logging setup failed: {logging_result}'}
+    
+    return {
+        'success': True,
+        'context': {
+            'directories': dirs_result,
+            'database': db_result,
+            'config': config_result['config'],
+            'logging': logging_result
+        }
     }
-    
-    # Загрузка статуса проекта
-    status_file = project_root / "project-status.json"
-    if status_file.exists():
-        context["project_info"]["status"] = json.loads(status_file.read_text(encoding="utf-8"))
-    
-    # Загрузка правил
-    rules_file = project_root / "rule_My-CV-Engineering-Projects.md"
-    if rules_file.exists():
-        context["rules"] = rules_file.read_text(encoding="utf-8")
-    
-    # Сбор структуры проекта
-    for item in project_root.iterdir():
-        if item.is_dir() and not item.name.startswith('.'):
-            context["project_info"]["structure"][item.name] = [
-                f.name for f in item.iterdir() if f.is_file()
-            ]
-    
-    # Загрузка ключевых файлов
-    key_files = [
-        "README.md",
-        "CV-010_face_detection/README.md",
-        "CV-010_face_detection/face_detection.py"
-    ]
-    
-    for file_path in key_files:
-        full_path = project_root / file_path
-        if full_path.exists():
-            context["files"][file_path] = full_path.read_text(encoding="utf-8")
-    
-    return context
 
 if __name__ == "__main__":
-    ctx = load_project_context(".")
-    
-    # Сохранение контекста в файл
-    output_file = project_root / "context.json"
-    with open("context.json", "w", encoding="utf-8") as f:
-        json.dump(ctx, f, indent=2, ensure_ascii=False)
-    
-    print(f"✅ Полный контекст проекта сохранен в context.json")
-    print(f"📁 Найдено компонентов: {len(ctx['files'])}")
-    print(f"🎯 Текущая фаза: {ctx['project_info']['status'].get('current_phase', 'N/A')}")
+    ctx = load_context()
+    if ctx['success']:
+        print("✅ Контекст успешно загружен")
+    else:
+        print(f"❌ Ошибка загрузки контекста: {ctx['error']}")

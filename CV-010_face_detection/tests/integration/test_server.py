@@ -17,7 +17,7 @@ def test_server():
     # Check port 5000
     if not check_port(5000):
         print("[ERROR] Port 5000 is already in use. Please stop the process first.")
-        return False
+        assert False, "Port 5000 is already in use"
     
     # Start server in background
     print("[TEST] Starting server...")
@@ -37,12 +37,12 @@ def test_server():
         else:
             print(f"[ERROR] Server returned status code: {response.status_code}")
             process.terminate()
-            return False
+            assert False, f"Server returned status code: {response.status_code}"
         
         # Test upload endpoint
         print("[TEST] Testing upload endpoint...")
-        if os.path.exists('input.jpg'):
-            with open('input.jpg', 'rb') as f:
+        if os.path.exists('../assets/input.jpg'):
+            with open('../assets/input.jpg', 'rb') as f:
                 files = {'file': f}
                 upload_response = requests.post('http://localhost:5000/upload', files=files, timeout=10)
                 
@@ -53,22 +53,22 @@ def test_server():
                 print(f"[ERROR] Upload failed with status code: {upload_response.status_code}")
                 print(f"Response: {upload_response.text}")
                 process.terminate()
-                return False
+                assert False, f"Upload failed with status code: {upload_response.status_code}"
         else:
             print("[WARNING] input.jpg not found. Skipping upload test.")
             
     except requests.exceptions.ConnectionError:
         print("[ERROR] Cannot connect to server. Is it running?")
         process.terminate()
-        return False
+        assert False, "Cannot connect to server"
     except requests.exceptions.Timeout:
         print("[ERROR] Server timeout. The server might be stuck.")
         process.terminate()
-        return False
+        assert False, "Server timeout"
     except Exception as e:
         print(f"[ERROR] Test failed: {str(e)}")
         process.terminate()
-        return False
+        assert False, f"Test failed: {str(e)}"
     
     # Clean up
     process.terminate()

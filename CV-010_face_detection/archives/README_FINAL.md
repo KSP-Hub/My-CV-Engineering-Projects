@@ -83,56 +83,30 @@ python src/CV-010-app.py
 ```
 CV-010_face_detection/
 ├── configs/                        # Конфигурационные файлы
-│   ├── haarcascade_frontalface_default.xml  # Каскад Хаара для детекции лиц
-│   └── config.json                 # Конфигурация параметров детекции (масштаб, neighbors, размеры)
-├── docs/                           # Документация проекта
-│   ├── getting_started/            # Руководство по началу работы
-│   ├── api_reference/              # Спецификация API и эндпоинтов
-│   ├── troubleshooting/            # Руководство по устранению неполадок
-│   └── contributing/               # Руководство для разработчиков
-├── src/                            # Исходный код приложения
-│   ├── face_detection.py           # Консольное приложение для детекции лиц
-│   ├── CV-010-app.py               # Веб-приложение Flask
-│   ├── face_detection_core.py      # Общее ядро детекции лиц (общая логика)
-│   ├── check_env.py                # Проверка окружения и зависимостей
-│   ├── context_loader.py           # Загрузка контекста и конфигурации
-│   └── __init__.py                 # Инициализация пакета
-├── static/                         # Статические файлы и результаты
-│   ├── css/                        # Стили
-│   ├── js/                         # JavaScript файлы
-│   └── uploads/                    # Загруженные пользователем изображения
-├── templates/                      # HTML шаблоны Flask
-│   └── index.html                  # Основной шаблон веб-интерфейса
-├── tests/                          # Автоматизированные тесты
-│   ├── unit/                       # Модульные тесты
-│   │   ├── test_face_detection.py  # Тесты консольного приложения
-│   │   ├── test_CV-010-app.py      # Тесты веб-приложения
-│   │   ├── test_check_env.py       # Тесты проверки окружения
-│   │   └── test_context_loader.py  # Тесты загрузки контекста
-│   └── integration/                # Интеграционные тесты
-│       └── test_server.py          # Тесты сервера и API
-├── assets/                         # Ассеты проекта
-│   └── sample_images/              # Примеры изображений для тестирования
+│   └── haarcascade_frontalface_default.xml
+├── docs/                           # Документация
+│   ├── getting_started/                # Инструкция по началу работы
+│   ├── api_reference/                  # Документация по API
+│   ├── troubleshooting/                # Руководство по устранению неполадок
+│   └── contributing                    # Инструкции для разработчиков
+├── src/                            # Исходный код
+│   ├── face_detection.py           # Консольное приложение
+│   ├── CV-010-app.py               # Веб-приложение
+│   ├── face_detection_core.py      # Ядро детекции лиц
+│   └── __init__.py
+├── static/                         # Результаты обработки
+├── templates/                      # HTML шаблоны
+├── tests/                          # Тесты
+├── assets/                         # Ассеты
 ├── scripts/                        # Скрипты автоматизации
-│   ├── build_executable.py         # Скрипт сборки исполняемого файла
-│   ├── create_conda_env.py         # Создание conda-окружения
-│   └── kill_port.bat               # Скрипт завершения процессов на порту
-├── .github/                        # Конфигурация GitHub
-│   └── workflows/                  # CI/CD пайплайны
-│       └── ci.yml                  # Автоматическое тестирование и проверка
-├── ai-conversations/               # Диалоги с AI-ассистентом
-├── archives/                       # Архивные версии и резервные копии
-├── build/                          # Временные файлы сборки
-├── dist/                           # Собранные пакеты и исполняемые файлы
-├── htmlcov/                        # Отчет о покрытии кода тестами
-├── pyproject.toml                  # Управление зависимостями и пакетами
-├── CV-010-app.spec                 # Конфигурация PyInstaller
-├── face_detection.log              # Лог-файл приложения
-├── face_detection_notebook.ipynb   # Jupyter notebook с анализом и демонстрацией
-├── requirements.txt                # Зависимости Python
-├── CHANGELOG.md                    # История изменений версий
-├── LICENSE                         # Лицензия проекта
-└── README.md                       # Основная документация проекта
+├── pyproject.toml       # Файл используется для управления зависимостями, настройки инструментов и описания пакета
+├── CV-010-app.spec      # Файл используется PyInstaller для создания исполняемого файла
+├── face_detection.log   # Основной лог-файл. Настроен в face_detection.py ч/зlogging.FileHandler("../face_detection.log", encoding="utf-8")
+├── face_detection_notebook.ipynb   # Jupyter notebook с аналитикой и демонстрацией работы алгоритма
+├── requirements.txt                # Зависимости
+├── CHANGELOG.md                    # История изменений
+├── LICENSE                         # Лицензия
+└── README.md                       # Основная документация
 ```
 
 ## Настройка параметров

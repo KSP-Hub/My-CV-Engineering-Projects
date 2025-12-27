@@ -6,7 +6,7 @@
 
 - Status: ''
 
-<!-- Справочная информация: [@Guide.md](D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\docs\Guide.md###status)
+<!-- Справочная информация: [@guide.md](D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\docs\guide.md###status)
 
 <!--
 # Информация для сайта - резюме
@@ -17,7 +17,7 @@
 
 ## Задачи (Требуются действия)
 
-1. Изучи справочную информацию и примеры, чтобы корректно заполнить код: [@Guide.md](D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\docs\Guide.md);
+1. Изучи справочную информацию и примеры, чтобы корректно заполнить код: [@guide.md](D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\docs\guide.md);
 
 Код для сайта:
 ```js

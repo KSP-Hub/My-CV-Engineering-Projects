@@ -15,6 +15,8 @@
     - **Платформа**: локальная установка (Windows/Linux/macOS)
 
     - **Основной язык интерфейса**: русский (с опцией переключения на английский)
+
+    - **project status**: ongoing
   
 # 2. Цель
 
@@ -66,7 +68,7 @@
   - ОС: Windows 10/11, Linux, macOS;
   - Требования к железу: 8+ GB RAM, 4+ CPU cores
 
-[Пакет релиза CV-010 — GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0)
+[Пакет релиза CV-000-v1.0.0 — GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-000-v1.0.0)
 
 ## 4. Технические требования
 
@@ -133,14 +135,16 @@
 ## 9. Структура проекта
 
 ```markdown
-My-CV-Engineering-Projects/CV-000-ai-assistant/
-├── docs/                   # Документация
-├── image/                  # Изображения
-├── LICENSE                 # Лицензия
-├── README.md               # Главный файл документации
-├── requirements.txt        # Список зависимостей
-├── scripts/                # Скрипты автоматизации
-└── tests/                  # Тесты
+CV-000-ai-assistant/
+├── docs/                  # Документация
+├── scripts/               # Скрипты автоматизации
+├── tests/                 # Тесты
+├── images/                # Изображения
+├── src/                   # Исходный код
+├── configs/               # Конфигурационные файлы
+├── requirements.txt       # Зависимости
+├── LICENSE                # Лицензия
+└── README.md              # Главный файл документации
 ```
 ## 10. Назначение папок и файлов в проекте
 

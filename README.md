@@ -152,7 +152,7 @@ My-CV-Engineering-Projects/
    ```
 2. Запустите сервер:
    ```bash
-   python app.py
+   python CV-010-app.py
    ```
 3. Откройте в браузере:
    http://localhost:5000

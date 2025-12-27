@@ -1,0 +1,44 @@
+# Временные файлы
+*.tmp
+*.log
+output.jpg
+output_notebook.jpg
+
+# Jupyter Notebook
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/**
+*.ipynb - Copy*.ipynb
+
+# Виртуальные окружения
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# RAR архивы
+*.rar
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Устаревшее исключение — можно удалить
+# .gitignore.txt
+
+# Скомпилированные бинарные файлы
+# CV-010_face_detection/dist/CV-010-app.exe
+# build/app/CV-010-app.pkg
+
+# Большие бинарные файлы — управляются через LFS или исключены
+*.exe
+*.pkg
+*.bin
+*.zip
+*.tar.gz

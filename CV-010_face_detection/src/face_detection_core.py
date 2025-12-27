@@ -12,6 +12,7 @@ import cv2
 import numpy as np
 import os
 import logging
+import base64
 
 # Настройка логгирования
 logger = logging.getLogger(__name__)
@@ -20,10 +21,22 @@ logger = logging.getLogger(__name__)
 class FaceDetectionConfig:
     """Конфигурация для детекции лиц"""
     def __init__(self):
-        self.scale_factor = 1.1
-        self.min_neighbors = 5
-        self.min_size = (30, 30)
-        self.max_image_width = 800
+        # Загрузка конфигурации из config.json
+        config_path = os.path.join(os.path.dirname(__file__), '..', 'configs', 'config.json')
+        if os.path.exists(config_path):
+            import json
+            with open(config_path, 'r', encoding='utf-8') as f:
+                json_config = json.load(f)
+                self.scale_factor = json_config.get('scaleFactor', 1.1)
+                self.min_neighbors = json_config.get('minNeighbors', 5)
+                self.min_size = tuple(json_config.get('minSize', [30, 30]))
+                self.max_image_width = json_config.get('maxImageWidth', 800)
+        else:
+            # Параметры по умолчанию
+            self.scale_factor = 1.1
+            self.min_neighbors = 5
+            self.min_size = (30, 30)
+            self.max_image_width = 800
 
 
 class FaceDetector:
@@ -37,7 +50,7 @@ class FaceDetector:
         self.config = config or FaceDetectionConfig()
         
         # Путь к предобученному каскаду Хаара
-        self.cascade_path = os.path.join(os.path.dirname(__file__), '..', 'configs', 'haarcascade_frontalface_default.xml')
+        self.cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
         
         # Проверка существования файла каскада
         if not os.path.exists(self.cascade_path):
@@ -111,6 +124,7 @@ class FaceDetector:
             cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
             cv2.putText(img, f'Face #{idx}', (x, y-10),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+                    
         
         result = {
             'count': len(faces),

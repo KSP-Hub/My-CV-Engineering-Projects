@@ -20,10 +20,10 @@
 - [x] Задача "@ИИ": Обнови все ссылки на релизы мне показалось ты напутал. Если есть ошибки. Вот корректные ссылки и названия:
   - CV-000-ai-assistant: [Пакет релиза CV-000-ai-assistant — GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-000-v1.0.0).
   - CV-010_face_detection: [Пакет релиза CV-010_face_detection — GitHub Releases](https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0.
-- [x] Задача "@ИИ": Улучши описание в файле README.md. Путь: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\README.md" и добавь ссылки на пакет релиза. Технологии и инструменты. Установка.Запуск. Обновняй историю задач тезисно после выполнения.
-- [x] Задача "@ИИ": Улучши описание в файле README.md. Путь: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\CV-000-ai-assistant\README.md" и добавь ссылки на пакет релиза. Технологии и инструменты. Установка.Запуск. Обновняй историю задач тезисно после выполнения.
-- [x] Задача "@ИИ": Добавь в файл: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\README.md" недостающую информацию по аналогии с содержанием файла: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\README.md"
-- [x] Задача "@ИИ": Обвони README.md в связи с изменениями последними (Вот путь: D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\CV-000-ai-assistant\README.md. Вот ссылки на пакет релиза: https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0).
+- [x] Задача "@ИИ": Улучши описание в файле README-20251225175800.md. Путь: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\README-20251225175800.md" и добавь ссылки на пакет релиза. Технологии и инструменты. Установка.Запуск. Обновняй историю задач тезисно после выполнения.
+- [x] Задача "@ИИ": Улучши описание в файле README-20251225175800.md. Путь: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\CV-000-ai-assistant\README-20251225175800.md" и добавь ссылки на пакет релиза. Технологии и инструменты. Установка.Запуск. Обновняй историю задач тезисно после выполнения.
+- [x] Задача "@ИИ": Добавь в файл: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\README-20251225175800.md" недостающую информацию по аналогии с содержанием файла: "D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\README-20251225175800.md"
+- [x] Задача "@ИИ": Обвони README-20251225175800.md в связи с изменениями последними (Вот путь: D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\CV-000-ai-assistant\README-20251225175800.md. Вот ссылки на пакет релиза: https://github.com/KSP-Hub/My-CV-Engineering-Projects/releases/tag/CV-010-v1.0.0).
 - [x] Задача "@Пользователя": Вставить ссылки на пакет релиза.Ответственный: @Пользователь|
 ### Рекомендации по релизу:
 - [x] Задача: Создать тег версии MVP 1.0 в Git | Ответственный: @Пользователь |
@@ -33,8 +33,8 @@
 - [x] Задача: Подготовь информацию для релиза на GitHub с описанием ключевых функций| Ответственный: @ИИ |
 
 ### Документация
-- [x] Задача: Обнови инструкции в файле README.md по использованию с учетом последних изменений| Ответственный: @ИИ |
-- [x] Задача: Обнови файл @D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\CV-000-ai-assistant\docs\ПРОБЛЕМЫ И ЗАДАЧИ.md с учетом последних изменений| Ответственный: @ИИ |
+- [x] Задача: Обнови инструкции в файле README-20251225175800.md по использованию с учетом последних изменений| Ответственный: @ИИ |
+- [x] Задача: Обнови файл @D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\CV-000-ai-assistant\docs\issue_tracker.md с учетом последних изменений| Ответственный: @ИИ |
 
 ### Зависимости
 - [x] Задача: Проверь и заполни файл: D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects\CV-000-ai-assistant\requirements.txt | Ответственный: @ИИ |
