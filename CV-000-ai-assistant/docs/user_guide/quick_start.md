@@ -70,8 +70,22 @@
 
 **Коротко:**
 
-1. **Запустил `start_cv_assistant.ps1` → работай**
+1. **Запустил `start_cv_assistant.ps1` → работай**
+```powershell
+scripts/start_cv_assistant.ps1
+ ```
 
-2. **Сомневаешься → запусти `check_assistant.ps1`**
+2. **Сомневаешься → запусти `check_assistant.ps1`**
+```powershell
+scripts/check_assistant.ps1
+ ```
 
-3. **Не работает → запусти `reset_assistant.ps1` → затем `check_assistant.ps1`**
+3. **Не работает → запусти `reset_assistant.ps1` → затем `check_assistant.ps1`**
+Шаг 1:
+```powershell
+scripts/reset_assistant.ps1
+ ```
+Шаг 2:
+```powershell
+scripts/check_assistant.ps1
+ ```
