@@ -1,4 +1,4 @@
-# [ID + Template Project Name]
+# [ID + Template Project Name 3.0]
 
 # Быстрый старт
 
@@ -6,13 +6,13 @@
 
 ```bash
 # 1. Активируй окружение
-cd D:\Apps\GitHub\KSP-Hub\My-CV-Engineering-Projects
-.\venv\Scripts\activate
+cd D:\\Apps\\GitHub\\KSP-Hub\\My-CV-Engineering-Projects
+.\\venv\\Scripts\\activate
 ```
 
 ```bash
 # 2. Запусти тестовое приложение
-python CV-011_qr_detection\simple_qr_app.py
+python CV-011_qr_detection\\simple_qr_app.py
 ```
 
 ✔ **Что будет:**  
@@ -22,9 +22,8 @@ python CV-011_qr_detection\simple_qr_app.py
 ## Рекомендации по использованию шаблона
 > `Ctrl + F` -> найти и заменить `[Template Project Name]` но новое название проекта. @Пользователь
 
-## Основная информация
-- **ID + Название проекта:** [ID + Template Project Name]
-- **Название проекта:** [Template Project Name]
+- **ID + Название проекта:** [ID + Template Project Name 3.0]
+- **Название проекта:** [Template Project Name 3.0]
 - **ID проекта:** [Укажите ID (код), например: CV-XXX]
 - **Категория:** Computer Vision, AI
 - **Сложность:** [beginner/intermediate/advanced]
