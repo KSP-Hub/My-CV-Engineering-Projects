@@ -22,10 +22,46 @@ class QRDetector:
             tuple: (успех, данные, точки границы) или (False, None, None)
         """
         try:
+            # Проверка, что изображение не пустое
+            if frame is None or frame.size == 0:
+                print("Ошибка: Пустое изображение")
+                return False, None, None
+            
+            # Попробуем декодировать как есть
             data, bbox, _ = self.detector.detectAndDecode(frame)
             
             if bbox is not None and data:
                 return True, data, bbox
+            
+            # Если не получилось, попробуем в градациях серого
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            data, bbox, _ = self.detector.detectAndDecode(gray)
+            
+            if bbox is not None and data:
+                return True, data, bbox
+            
+            # Если все еще не получается, попробуем с бинаризацией
+            _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+            data, bbox, _ = self.detector.detectAndDecode(binary)
+            
+            if bbox is not None and data:
+                return True, data, bbox
+            
+            # Попробуем с инвертированным изображением
+            inverted = cv2.bitwise_not(binary)
+            data, bbox, _ = self.detector.detectAndDecode(inverted)
+            
+            if bbox is not None and data:
+                return True, data, bbox
+            
+            # Попробуем с размытием для уменьшения шума
+            blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+            _, binary_blurred = cv2.threshold(blurred, 127, 255, cv2.THRESH_BINARY)
+            data, bbox, _ = self.detector.detectAndDecode(binary_blurred)
+            
+            if bbox is not None and data:
+                return True, data, bbox
+            
             return False, None, None
             
         except Exception as e:
